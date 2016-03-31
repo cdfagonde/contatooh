@@ -1,4 +1,4 @@
-// contatooh/consulta.js
+// contatooh/consulta.js (now on git!)
 
 var MongoClient = require( 'mongodb' ).MongoClient;
 var ObjectID = require( 'mongodb' ).ObjectID;
