@@ -1,0 +1,28 @@
+<!-- public/index.html -->
+<!doctype html>
+<html ng-app="contatooh">
+	<head>
+		<meta name="viewport" content="width=device-width" >
+		<meta charset="UTF-8" >
+	</head>
+	<body>
+		<div ng-view ></div>
+		<h1> Bem-vindo ao Contatooh </h1>
+
+		<button ng-click="incrementaa()" style="width:44px;">++</button>
+		<button ng-click="incrementa()"  style="width:44px;">+</button>
+		&nbsp;
+		<button ng-click="zero()" style="width:44px;">0</button>
+		&nbsp;
+		<button ng-click="decrementa()"  style="width:44px;">-</button>
+		<button ng-click="decrementaa()" style="width:44px;">- -</button>
+
+		<br>
+		<p>Contatos cadastrados: {{total}}</p>
+
+		<script src="vendor/angular/angular.js" ></script>
+		<script src="vendor/angular-route/angular-route.js"></script>
+		<script src="js/main.js" ></script>
+		<script src="js/controllers/contatosController.js" ></script>
+	</body>
+</html>

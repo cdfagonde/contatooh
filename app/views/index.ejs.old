@@ -1,0 +1,14 @@
+<!-- app/views/index.ejs -->
+<!doctype html>
+<html>
+ <head>
+  <meta charset= "UTF-8" >
+  <title> Bem-vindo </title>
+ </head>
+ <body>
+  <h1> Bem-vindo ao [<%=nome %>] </h1>
+  <h2> Escuchando [<%=artista %>] </h2>
+  <h3> Album [<%=album %>] </h3>
+  <img src="yo.jpg"/>
+ </body>
+</html>
