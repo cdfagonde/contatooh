@@ -1,5 +1,7 @@
 // app/controllers/contato.js
 
+var sanitize = require( 'mongo-sanitize' );
+
 module.exports = function( app ) {
 	var Contato = app.models.contato;
 	var controller = {};
@@ -35,17 +37,16 @@ module.exports = function( app ) {
 	};
 
 	controller.removeContato = function( req,res ) {
-		var _id = req.params.id;
-		console.log("Excluindo ID " + _id);
+		var _id = sanitize( req.params.id );
 		Contato.remove({ "_id" : _id }).exec()
-			.then(
-				function() {
-					res.status( 204 ).end();
-				},
-				function( erro ) {
-					return console.error( erro );
-				}
-			);
+		.then(
+			function() {
+				res.status( 204 ).end();
+			},
+			function( erro ) {
+				return console.error( erro );
+			}
+		);
 	};
 
 	controller.salvaContato = function( req,res ) {
