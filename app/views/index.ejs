@@ -5,8 +5,10 @@
 		<meta name="viewport" content="width=device-width" >
 		<meta charset="UTF-8" >
 		<title> ContatooH </title>
+		<!-- build:css css/index.min.css -->
 		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" >
 		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css" >
+		<!-- endbuild -->
 	</head>
 	<body class= "container">
 		<br>
@@ -27,6 +29,7 @@
  		</div>
 		<div ng-view ></div>
 
+		<!-- build:js js/index.min.js -->
 		<script src="vendor/angular/angular.js" ></script>
 		<script src="vendor/angular-route/angular-route.js"></script>
 		<script src="vendor/angular-resource/angular-resource.js" > 2 </script>
@@ -36,5 +39,6 @@
 		<script src="js/services/InterceptorService.js" ></script>
 		<script src="js/controllers/contatosController.js" ></script>
 		<script src="js/controllers/contatoController.js" ></script>
+		<!-- endbuild -->
 	</body>
 </html>
