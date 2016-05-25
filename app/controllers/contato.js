@@ -22,7 +22,7 @@ module.exports = function( app ) {
 
 	controller.obtemContato = function( req,res ) {
 		var _id= req.params.id;
-		console.log("Consultando ID " + _id);
+		// console.log("Consultando ID " + _id);
 		Contato.findById( _id ).exec()
 			.then(
 				function( contato ) {

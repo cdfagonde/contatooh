@@ -22,14 +22,18 @@ angular.module( 'contatooh' ).controller( 'contatoController',
 		$scope.salva = function () {
 			// lógica de salvamento
 			$scope.contato.$save()
-				.then( function () {
-					$scope.mensagem = { texto : 'Salvo com sucesso' };
-					// limpa o formulário
-					$scope.contato = new Contato ();
-				})
-				.catch( function( erro ) {
-					$scope.mensagem = { texto : 'Não foi possível salvar' };
-				});
+			.then( function () {
+				$scope.mensagem = { texto : 'Salvo com sucesso' };
+				// limpa o formulário
+				$scope.contato = new Contato();
+			})
+			.catch( function( erro ) {
+				$scope.mensagem = { texto : 'Não foi possível salvar' };
+			});
+
+			// Vamos substituir o $watch pelo event bus do AngularJS
+			// $scope.btnBackFocus = true;
+			$scope.$broadcast( 'contatoSalvo' );
 		};
 
 		Contato.query( function( contatos ) {

@@ -2,6 +2,8 @@
 
 <h1 class="text-center" > Contato </h1>
 <p ng-show="mensagem.texto" > {{mensagem.texto}} </p>
+
+<meu-painel titulo="Listagem de contatos" >
 <form ng-submit="salva()">
 	<div class="form-group" >
 		<label for="nome" > Nome completo </label>
@@ -25,6 +27,9 @@
 	</div>
 	<div>
 		<button type="submit" class="btn btn-primary" > Salvar </button>
-		<a href= "#/" class="btn btn-default"> Voltar </a>
+		<!-- <a href= "#/" class="btn btn-default"> Voltar </a> -->
+		<a id="botao-voltar" meu-focus evento="contatoSalvo" href="#/"
+		 	class="btn btn-default"> Voltar </a>
 	</div>
 </form>
+</meu-painel>
