@@ -1,6 +1,6 @@
 // contatooh/test/spec/contatoControllerSpec.js
 
-describe( "contatoController", function () {
+describe( "contatoController", function() {
 	var $scope, $httpBackend;
 
 	beforeEach( function() {
@@ -15,7 +15,7 @@ describe( "contatoController", function () {
 
 	it( "Deve criar um Contato vazio quando nenhum parâmetro de rota for passado",
 		inject( function( $controller ) {
-			$controller( 'ContatoController', {
+			$controller( 'contatoController', {
 				'$scope' : $scope
 			});
 			expect( $scope.contato._id ).toBeUndefined();
@@ -23,7 +23,7 @@ describe( "contatoController", function () {
 
 	it( "Deve preencher o Contato quando parâmetro de rota for passado",
 		inject( function( $controller ) {
-			$controller( 'ContatoController', {
+			$controller( 'contatoController', {
 				$routeParams : { contatoId : 1 },
 				'$scope' : $scope
 			});

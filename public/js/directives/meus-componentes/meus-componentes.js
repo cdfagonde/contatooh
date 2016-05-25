@@ -1,5 +1,4 @@
-// public/js/directives/
-// meus-componentes/meus-componentes.js
+// public/js/directives/meus-componentes/meus-componentes.js
 
 angular.module( 'meusComponentes', [])
 .directive( 'meuPainel', function() {
