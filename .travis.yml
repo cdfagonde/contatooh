@@ -1,0 +1,42 @@
+language: node_js
+node_js:
+- 0.10
+notifications:
+  email: false
+services:
+- mongodb
+env:
+  global:
+  - NODE_ENV: test
+addons:
+  sauce_connect: true
+before_install:
+- npm install -g bower@1.3
+- npm install -g grunt-cli@0.1
+- npm install -g karma-cli@0.0
+- npm install -g protractor@1.5
+- webdriver-manager update
+- bower install
+before_script:
+- node test/data.js
+- grunt minifica
+- node server &
+- sleep 10
+script:
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- protractor config/protractor.js
+before_deploy:
+- git config --global user.email 'travis@travis-ci.com'
+- git config --global user.name 'Travis CI'
+- git checkout $TRAVIS_BRANCH
+- git add --all
+- git commit -am "Travis commit"
+deploy:
+  provider: openshift
+  user: cdfagonde@hotmail.com
+  password:
+    secure: B5RJtlmXjkJ58Cap3mCLtDFtg2LXNAS6ntfK3ZF9EIUZBcZ4pEESmTQ2qdq6tE4N4TifI/4nqL3eWwdy8xa1xBPO2HgnbGfkfCgIzkdujJ20VlnAXqmg8T4kz4cvhCgfAugB+ARH1OYXS1gPIxElqx3nul0kzY30XNGnYK6Ewf0=
+  app: contatooh
+  domain: cdfagonde
+  on:
+    repo: cdfagonde/contatooh

@@ -4,9 +4,6 @@ var GitHubStrategy = require( 'passport-github').Strategy;
 var mongoose = require( 'mongoose' );
 var config = require('./config')();
 
-console.log("Configurações..");
-console.log(config);
-
 module.exports = function() {
 
 	// declarando uma variável para nos ajudar
